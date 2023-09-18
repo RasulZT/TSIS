@@ -1,0 +1,19 @@
+.mylogo {
+  height: 100px;
+  background-color: rgb(33, 37, 41);
+
+  &_img {
+    margin: 20px 0 0 0;
+  }
+}
+
+.nav-link {
+  color: white;
+  font-size: 30px;
+}
+
+.nav_item_active {
+  a {
+    color: yellow !important;
+  }
+}

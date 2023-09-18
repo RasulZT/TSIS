@@ -1,0 +1,47 @@
+<section class="ftco-section">
+  <div class="container-fluid mylogo ">
+    <div class="row  justify-content-center ">
+      <div class="col-md-6 text-center mb-5 justify-content-center">
+        <img class="mylogo_img" src="https://static.tildacdn.com/tild3162-3461-4238-a366-323466663732/_2day_academy.png"
+             width="150" height="70">
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ftco-nav"
+              aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav m-auto">
+          <li *ngFor="let item of pages;let i=index"
+              [ngClass]="{'nav_item_active': !item.isDropdawn && item.isActive,
+               'nav-item' : !item.isDropdawn && !item.isActive,
+               'nav-item dropdown':item.isDropdawn && !item.isActive}"
+              (click)="changeActive(i)">
+            <a href="#" class="nav-link" *ngIf="!item.isDropdawn">{{item.label}}</a>
+            <a class="nav-link dropdown-toggle" *ngIf="item.isDropdawn" href="#" id="dropdown04" role="button"
+               data-bs-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">Программы обучения</a>
+            <ul class="dropdown-menu" *ngIf="item.isDropdawn" aria-labelledby="dropdown04">
+              <li><a class="dropdown-item" href="#">Page 1</a></li>
+              <li><a class="dropdown-item" href="#">Page 2</a></li>
+              <li><a class="dropdown-item" href="#">Page 3</a></li>
+              <li><a class="dropdown-item" href="#">Page 4</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <my_dropdown [options]="optionsList2"></my_dropdown>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+</section>

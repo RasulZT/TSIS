@@ -1,0 +1,12 @@
+.list-group{
+  display: block;
+  position: absolute;
+  transform: translate(-50%,0);
+  background-color: #fff;
+  color: #000;
+  z-index: 100;
+  box-shadow: 0px 0px 32px rgba(80, 92, 100, 0.06),
+  0px 4px 20px rgba(42, 53, 61, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+}

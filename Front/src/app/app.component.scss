@@ -1,0 +1,7 @@
+.asd{
+  background-color: blueviolet;
+  &:hover{
+    cursor: pointer;
+    background-color: blue;
+  }
+}
