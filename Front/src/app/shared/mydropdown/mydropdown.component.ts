@@ -13,9 +13,9 @@ export class MydropdownComponent implements OnInit {
 
   public isDropDownOpen: boolean = false;
   public dropdown: string = '';
-
+  @Input()label!:string;
   @Input() options!: Options[];
-  @ViewChild("dropdownDiv") dropdownDiv!: ElementRef;
+  @ViewChild("textDropdown") textDropdown!: ElementRef;
 
   ngOnInit() {
     this.options.forEach((opt) => {
@@ -36,9 +36,9 @@ export class MydropdownComponent implements OnInit {
   }
 
   getDropdownStyle() {
-    let style: string = `width:${this.dropdownDiv?.nativeElement.offsetWidth}px;
-    left:${this.dropdownDiv?.nativeElement.offsetLeft + this.dropdownDiv?.nativeElement.offsetWidth / 2}px;
-    top:${this.dropdownDiv?.nativeElement.offsetTop + this.dropdownDiv?.nativeElement.offsetHeight}px;`
+    let style: string = `width:${this.textDropdown?.nativeElement.offsetWidth}px;
+    left:${this.textDropdown?.nativeElement.offsetLeft + this.textDropdown?.nativeElement.offsetWidth / 2}px;
+    top:${this.textDropdown?.nativeElement.offsetTop + this.textDropdown?.nativeElement.offsetHeight}px;`
     return style
   }
 }

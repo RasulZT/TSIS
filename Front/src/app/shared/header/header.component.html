@@ -17,29 +17,14 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav m-auto">
           <li *ngFor="let item of pages;let i=index"
-              [ngClass]="{'nav_item_active': !item.isDropdawn && item.isActive,
-               'nav-item' : !item.isDropdawn && !item.isActive,
-               'nav-item dropdown':item.isDropdawn && !item.isActive}"
+              [ngClass]="{'nav_item_active':  item.isActive,
+               'nav-item' :  !item.isActive}"
               (click)="changeActive(i)">
             <a href="#" class="nav-link" *ngIf="!item.isDropdawn">{{item.label}}</a>
-            <a class="nav-link dropdown-toggle" *ngIf="item.isDropdawn" href="#" id="dropdown04" role="button"
-               data-bs-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">Программы обучения</a>
-            <ul class="dropdown-menu" *ngIf="item.isDropdawn" aria-labelledby="dropdown04">
-              <li><a class="dropdown-item" href="#">Page 1</a></li>
-              <li><a class="dropdown-item" href="#">Page 2</a></li>
-              <li><a class="dropdown-item" href="#">Page 3</a></li>
-              <li><a class="dropdown-item" href="#">Page 4</a></li>
-            </ul>
+                  <my_dropdown *ngIf="item.isDropdawn" [label]="item.label" [options]="item.items"></my_dropdown>
           </li>
         </ul>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <my_dropdown [options]="optionsList2"></my_dropdown>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </nav>

@@ -1,22 +1,11 @@
-<form>
-  <div class="col-auto">
-    <div class="input-group mb-2" #dropdownDiv style="width:50%">
-      <input
-        name="dropdown"
-        class="form-control"
-        type="text"
-        [(ngModel)]="dropdown"
-      />
-      <div (click)="toggleDropdown()" class="input-group-prepend">
-        <div class="input-group-text">
-          <span class="caret down"></span>
-        </div>
-      </div>
-    </div>
+<div class="mydropdown d-flex">
+  <div class="mydrop" #textDropdown (click)="toggleDropdown()">
+    <p class="my_txt">{{label}}</p>
+    <img class="img_arrow" [ngStyle]="{'transform': isDropDownOpen?'rotate(180deg)':''}"
+         src="assets/svg/down-arrow-svgrepo-com.svg"
+         width="25px" height="20px">:
   </div>
-
-  <ul class="list-group" *ngIf="isDropDownOpen" [style]="getDropdownStyle()" >
-    adadad
+  <ul class="list-group" *ngIf="isDropDownOpen" [style]="getDropdownStyle()">
     <li
       [ngClass]="item.isActive ? 'activeOption' : ''"
       (click)="selectOption($event, index)"
@@ -26,4 +15,4 @@
       {{ item.value }}
     </li>
   </ul>
-</form>
+</div>

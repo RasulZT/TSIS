@@ -15,20 +15,15 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.initPages()
   }
-  public optionsList2: Options[] = [
-    { value: 'Bitter Gourd' },
-    { value: 'Pumpkin' },
-    { value: 'Bottle Gourd' },
-  ];
   private initPages() {
     this.pages = [
       {label: "Курсы", isDropdawn: false, isActive: true},
       {
         label: "Программы обучения", isDropdawn: true, isActive: false, items: [
-          {label: "Page 1"},
-          {label: "Page 2"},
-          {label: "Page 3"},
-          {label: "Page 4"},
+          {value: "Page 1"},
+          {value: "Page 2"},
+          {value: "Page 3"},
+          {value: "Page 4"},
         ]
       },
       {label: "Work", isDropdawn: false, isActive: false,},
