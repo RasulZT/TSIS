@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
   }
   private initPages() {
     this.pages = [
-      {label: "Курсы", isDropdawn: false, isActive: true},
       {
         label: "Программы обучения", isDropdawn: true, isActive: false, items: [
           {value: "Page 1"},

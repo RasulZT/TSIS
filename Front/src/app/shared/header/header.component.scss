@@ -3,7 +3,7 @@
   background-color: rgb(33, 37, 41);
 
   &_img {
-    margin: 20px 0 0 0;
+    margin-left: 90px;
   }
 }
 
@@ -16,4 +16,14 @@
   a {
     color: yellow !important;
   }
+}
+.container-fluid{
+  padding: 10px;
+}
+.my_nav{
+  margin-right: 180px;
+}
+li{
+  display: inline-block;
+  margin-right: 20px;
 }
