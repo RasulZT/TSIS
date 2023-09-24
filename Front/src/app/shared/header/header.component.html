@@ -7,7 +7,7 @@
               aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="fa fa-bars"></span> Menu
       </button>
-      <div class="collapse navbar-collapse" id="ftco-nav">
+      <div class="collapse navbar-collapse my_nav" id="ftco-nav">
         <ul class="navbar-nav m-auto">
           <li *ngFor="let item of pages;let i=index"
               [ngClass]="{'nav_item_active':  item.isActive,
