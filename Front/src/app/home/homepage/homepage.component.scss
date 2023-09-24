@@ -1,8 +1,87 @@
-.my_txt{
-  color: white;
+.heading_1{
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+
+@media screen and (max-width: 479px){
+  .heading_1{
+    font-size: 20px;
+    line-height: 1;
+  }
+}
+
+@media screen and (max-width: 767px ) and (min-width: 480px){
+  .heading_1{
+    font-size: 32px;
+    line-height: 1.1;
+  }
+}
+.main_container{
+  align-items: stretch;
+  padding-top: 50px;
+}
+
+
+.main_content {
+  width: 60%;
+  height: 100%;
+  max-width: 636px;
   margin-right: auto;
-  margin-left: auto;
 }
-.col-6{
-  border:1px solid violet;
+
+@media screen and (max-width: 991px){
+.main_content {
+  width: auto;
+ }
 }
+
+
+.video-block{
+  border-radius: 24px;
+  background-color: #f4f5fa;
+  padding: 0;
+  margin-left: 15px;
+
+  img{
+    width: 55%;
+    height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 20px;
+  }
+
+  @media screen and (max-width: 479px) {
+    img {
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    img {
+      height: auto;
+    }
+  }
+}
+
+
+
+.div-block-1{
+  margin-left: 28px;
+
+  .benefits_main {
+    color: #8d46f6;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/1053/1053156.png");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: visible;
+  }
+}
+
