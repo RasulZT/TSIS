@@ -27,5 +27,12 @@
 .mydrop{
   display: flex;
   flex-direction: row;
+
   width: 100%;
+}
+.list-group{
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  border: none !important;
+  padding: 0;
 }

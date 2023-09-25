@@ -13,7 +13,7 @@
               [ngClass]="{'nav_item_active':  item.isActive,
                'nav-item' :  !item.isActive}"
               (click)="changeActive(i)">
-            <a href="#" class="nav-link" *ngIf="!item.isDropdawn">{{item.label}}</a>
+            <a href="{{item.refss}}" class="nav-link" *ngIf="!item.isDropdawn">{{item.label}}</a>
                   <my_dropdown *ngIf="item.isDropdawn" [label]="item.label" [options]="item.items"></my_dropdown>
           </li>
         </ul>

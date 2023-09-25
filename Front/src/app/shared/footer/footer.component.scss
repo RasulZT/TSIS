@@ -1,0 +1,264 @@
+
+.gbFooter {
+  padding: 40px;
+  background-color: rgb(33, 37, 41);
+  color: #fff;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.gbFooter a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.gbFooter__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.gbFooter__top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 28px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gbFooter__phone {
+  font-weight: 600;
+}
+
+.gbFooter__mainInfo {
+  display: flex;
+}
+
+.gbFooter__topBlockItem {
+  margin-right: 92px;
+}
+
+.gbFooter__topItem:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.gbFooter__social {
+  display: flex;
+  margin-top: 24px;
+}
+
+.gbFooter__socialLink {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+  border-radius: 8px;
+}
+
+.gbFooter__socialLink:hover {
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.gbFooter__info {
+  white-space: nowrap;
+}
+
+.gbFooter__fastLinks {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gbFooter__fastLinksItem {
+  flex: 1 1 50%;
+  max-width: 50%;
+  white-space: nowrap;
+}
+
+.gbFooter__fastLinksItem--uc {
+  text-transform: uppercase;
+}
+
+.gbFooter__legal {
+  opacity: .7
+}
+
+.gbFooter__bottom {
+  height: 40px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gbFooter__logo {
+  display: flex;
+  align-items: center;
+}
+
+.gbFooter__slogan {
+  margin-left: 16px;
+  padding-left: 16px;
+  position: relative;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  white-space: pre-wrap;
+}
+
+.gbFooter__slogan:before {
+  content: '';
+  width: 1px;
+  height: 32px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.gbFooter__paymentSystems {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  margin: -4px;
+  list-style: none;
+}
+
+.gbFooter__paymentSystems-item {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+}
+
+.gbFooter__paymentSystems-item img {
+  max-width: 100%;
+  display: block;
+  font-size: 8px;
+}
+
+.gbFooter__copyright {
+  font-size: 13px;
+  line-height: 16px;
+  opacity: .7;
+  text-align: right;
+}
+
+@media only screen and (max-width: 1279px) {
+  .gbFooter__top {
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+
+  .gbFooter__mainInfo {
+    flex-direction: column;
+  }
+
+  .gbFooter__info {
+    margin-top: 40px;
+  }
+
+  .gbFooter__fastLinks {
+    flex: 0 1 400px;
+    height: max-content;
+  }
+
+  .gbFooter__top--withFastLinks .gbFooter__legal {
+    margin-top: 40px;
+  }
+
+  .gbFooter__top--withoutFastLinks .gbFooter__legal {
+    margin-top: 0;
+    flex: 1 1;
+  }
+
+  .gbFooter__bottom {
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .gbFooter__logo {
+    padding-bottom: 32px;
+  }
+
+  .gbFooter__paymentSystems {
+    position: static;
+    transform: translateX(0);
+    margin: -4px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc((40px + 4px * 2) * 6);
+  }
+
+  .gbFooter__copyright {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+  .gbFooter {
+    padding: 20px;
+  }
+
+  .gbFooter__top {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .gbFooter__top > div {
+    flex: 1 1 100%;
+  }
+
+  .gbFooter__topBlockItem {
+    margin-right: 0;
+  }
+
+  .gbFooter__social {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .gbFooter__fastLinks {
+    margin-top: 40px;
+  }
+
+  .gbFooter__fastLinksItem {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .gbFooter__top--withoutFastLinks .gbFooter__legal {
+    margin-top: 40px;
+  }
+
+  .gbFooter__bottom {
+    margin: 0 -40px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 16px;
+  }
+
+  .gbFooter__logo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .gbFooter__paymentSystems {
+    margin: -4px auto 32px;
+  }
+
+  .gbFooter__copyright {
+    width: 100%;
+    text-align: center;
+  }
+}

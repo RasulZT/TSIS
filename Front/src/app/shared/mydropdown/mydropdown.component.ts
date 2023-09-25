@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 import {Options} from "../../core/interfaces/options";
 import {NgForm} from "@angular/forms";
 
@@ -40,5 +40,14 @@ export class MydropdownComponent implements OnInit {
     left:${this.textDropdown?.nativeElement.offsetLeft + this.textDropdown?.nativeElement.offsetWidth / 2}px;
     top:${this.textDropdown?.nativeElement.offsetTop + this.textDropdown?.nativeElement.offsetHeight}px;`
     return style
+  }
+
+
+  @HostListener('document:mouseup',['$event'])
+  onDropdownOutClick(event:any){
+    const clickInside=this.textDropdown.nativeElement.contains(event.target);
+    if(!clickInside){
+      this.isDropDownOpen=false
+    }
   }
 }

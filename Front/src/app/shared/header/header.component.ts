@@ -25,9 +25,9 @@ export class HeaderComponent implements OnInit {
           {value: "Page 4"},
         ]
       },
-      {label: "Work", isDropdawn: false, isActive: false,},
-      {label: "Blog", isDropdawn: false, isActive: false,},
-      {label: "Contact", isDropdawn: false, isActive: false,},
+      {label: "О нас", isDropdawn: false, isActive: false,refss:"#myhome"},
+      {label: "Блог", isDropdawn: false, isActive: false},
+      {label: "Контакты", isDropdawn: false, isActive: false,refss:"#footer"},
     ]
   }
 
