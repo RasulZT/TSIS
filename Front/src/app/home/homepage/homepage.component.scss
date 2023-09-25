@@ -94,6 +94,101 @@
   }
 }
 
+
+
+.benefits_container {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-top: 40px;
+  display: flex;
+}
+
+  .benefit_block {
+    color: #000;
+    margin-right: 24px;
+    font-size: 18px;
+    line-height: 1.2
+  }
+
+
+
+.advantage_container {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+
+.advantage_header {
+  margin-bottom: 40px;
+  font-family: Gbfont, sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.3em;
+}
+
+
+  .advantage_grid {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-columns: 1fr;
+    display: grid;
+  }
+
+
+  .advantage_card_left {
+    background-color: #e8e5f9;
+    border-radius: 20px;
+    padding: 48px 40px;
+  }
+
+
+  .advantage_card_header {
+    padding: 0 0 10px;
+    font-family: Gbfont, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 42px;
+  }
+
+  .adv_ben_text {
+    font-family: Gbfont, sans-serif;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .advantage_card_right {
+    background-color: #e7edfb;
+    border-radius: 20px;
+    padding: 48px 40px;
+  }
+
+  .div-block-8 {
+    width: 100%;
+    max-width: 342px;
+    color: #191816;
+    margin-right: 70px;
+  }
+
+  .div-block-9{
+    flex-direction: row;
+    margin: auto;
+    img{
+      width: 150px;
+      height: 150px;
+      margin-right: 10px;
+      border-radius: 100%;
+      border: 5px solid #8d46f6;
+    }
+  }
+
+
+
+
 @media screen and (max-width: 479px){
   .heading_1{
     font-size: 20px;
@@ -104,6 +199,18 @@
     width: auto;
     max-width: 315px;
   }
+
+  .benefit_block {
+    width: 100%;
+    margin-right: 5px;
+    font-size: 14px;
+  }
+
+  .advantage_header{
+    font-size: 30px;
+    line-height: 40px;
+  }
+
 
 }
 
@@ -141,6 +248,21 @@
     margin-top: 10px;
   }
 
+  .advantage_header{
+    font-size: 29px;
+    line-height: 40px;
+  }
+
+  .advantage_grid {
+    display: block;
+  }
+
+  .div-block-9{
+    display: none;
+  }
+
+
+
 }
 
 
@@ -154,6 +276,21 @@
     width: 390px;
     margin-top: 50px;
   }
+
+  .benefits_container {
+    flex-wrap: wrap;
+  }
+
+  .benefit_block {
+    width:45%;
+    margin-bottom: 16px;
+  }
+
+  .advantage_card_right{
+    flex-direction: column;
+    display: flex;
+  }
+
 
 }
 
