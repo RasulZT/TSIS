@@ -23,6 +23,8 @@
 }
 .my_nav{
   margin-right: 180px;
+  padding: 2px;
+
 }
 li{
   display: inline-block;
@@ -31,7 +33,6 @@ li{
 .nav-link{
  font-size: 30px;
   &:hover{
-    font-size: 34px;
     font-weight: lighter;
     color: rgb(141, 70, 246);
     text-decoration: underline;
