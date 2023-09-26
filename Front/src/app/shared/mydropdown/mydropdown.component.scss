@@ -1,7 +1,7 @@
-.list-group{
+.list-group {
   display: block;
   position: absolute;
-  transform: translate(-50%,0);
+  transform: translate(-50%, 0);
   background-color: rgb(33, 37, 41);
   color: #000;
   z-index: 100;
@@ -10,27 +10,39 @@
   border-radius: 1px;
   padding: 24px;
 }
-.my_txt{
+
+.my_txt {
   font-size: 30px;
   color: white;
   margin-top: auto;
   margin-bottom: auto;
+
+  &:hover {
+    font-size: 34px;
+    font-weight: lighter;
+    color: rgb(141, 70, 246);
+    text-decoration: underline;
+  }
 }
-.mydropdown{
+
+.mydropdown {
   height: 100%;
 
 }
-.img_arrow{
+
+.img_arrow {
   margin-left: 4px;
- margin-top: 25px;
+  margin-top: 25px;
 }
-.mydrop{
+
+.mydrop {
   display: flex;
   flex-direction: row;
 
   width: 100%;
 }
-.list-group{
+
+.list-group {
   border-radius: 10px;
   background-color: #FFFFFF;
   border: none !important;

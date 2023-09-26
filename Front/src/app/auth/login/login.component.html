@@ -1,0 +1,20 @@
+<div class="login">
+  <div class="login_cont">
+    <div class="login_cont_mojo">
+      <img class="login_cont_mojo_img" src="https://img.freepik.com/premium-photo/education-distance-learning-e-learning-and-online-learning-are-all-types-of-personal-development_27634-789.jpg">
+    </div>
+    <div class="login_cont_form">
+      <p class="form_title">Авторизация</p>
+      <input class="form_inp" type="text" placeholder="User Name" [(ngModel)]="username">
+      <input class="form_inp" type="password" placeholder="Password" [(ngModel)]="password">
+      <div class="form_actions">
+        <button class="form_actions_login" (click)="login()">
+          Войти
+        </button>
+        <button class="form_actions_login" (click)="login()">
+          Зарегистрироваться
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

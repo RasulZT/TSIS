@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Options} from "../../core/interfaces/options";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import {Options} from "../../core/interfaces/options";
 export class HeaderComponent implements OnInit {
   pages: any[] = []
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
@@ -36,5 +37,13 @@ export class HeaderComponent implements OnInit {
       item.isActive = false
     })
     this.pages[i].isActive = true
+  }
+
+  goToLogin() {
+    this.router.navigate(['auth/login'])
+  }
+
+  goToRegister() {
+    this.router.navigate(['auth/register'])
   }
 }

@@ -1,0 +1,98 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+
+  &_cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 200px;
+
+    &_mojo {
+      display: flex;
+      flex-direction: column;
+
+      &_img {
+        background-size: cover;
+        border-radius: 5px;
+      }
+
+      &_txt {
+        margin-top: 0;
+        color: #FFFFFF;
+        font-size: 36px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+      }
+    }
+
+
+    &_form {
+      display: flex;
+      flex-direction: column;
+      background-color: #F4F3F3;
+      border-radius: 24px;
+      border: 1px solid gainsboro;
+      padding: 24px;
+      row-gap: 16px;
+    }
+  }
+}
+
+.form {
+
+  &_title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #301B52;
+    margin: 0 auto;
+  }
+
+  &_inp {
+    background: #F7F7F7;
+    border: 1px solid #828282;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 16px;
+
+    &::placeholder {
+      color: #ABAAAA;
+    }
+  }
+
+  &_actions {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    justify-content: space-between;
+
+    &_login {
+      width: 300px;
+      background: rgb(33, 37, 41);
+      border-radius: 20px;
+      color: #FFFFFF;
+      border: none;
+      outline: none;
+      padding: 8px 32px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &_signup {
+      width: 300px;
+      background: #DB0916;
+      border-radius: 20px;
+      color: #FFFFFF;
+      border: none;
+      outline: none;
+      padding: 8px 32px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}

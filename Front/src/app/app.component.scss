@@ -1,11 +1,16 @@
-.asd{
-  background-color: blueviolet;
-  &:hover{
-    cursor: pointer;
-    background-color: blue;
-  }
-}
+
 .my_footer{
   position: relative;
-  top: 150px;
+  top: 400px;
+}
+.myhead{
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+}
+.my_router{
+
+  width: 100%;
+  position: relative;
+  top:150px;
 }

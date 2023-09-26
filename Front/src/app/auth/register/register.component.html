@@ -1,0 +1,27 @@
+<div class="login">
+  <div class="login_cont">
+    <div class="login_cont_mojo">
+      <img class="login_cont_mojo_img" src="https://img.freepik.com/premium-photo/education-distance-learning-e-learning-and-online-learning-are-all-types-of-personal-development_27634-789.jpg">
+    </div>
+    <div class="login_cont_form">
+      <p class="form_title">Регистрация</p>
+      <input class="form_inp" type="text" placeholder="Электронная почта" [(ngModel)]="username">
+      <input class="form_inp" type="password" placeholder="Пароль" [(ngModel)]="password">
+      <input class="form_inp" type="text" placeholder="Имя" [(ngModel)]="name">
+      <div>
+        <input type="radio" name="role" value="Teacher" [(ngModel)]="selectedRole">Teacher
+      </div>
+      <div>
+        <input type="radio" name="role" value="Student" [(ngModel)]="selectedRole">Student
+      </div>
+      <div class="form_actions">
+        <button class="form_actions_login" (click)="register()">
+          Зарегистрироваться
+        </button>
+        <button class="form_actions_signup" (click)="goToLogin()">
+          Войти
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
