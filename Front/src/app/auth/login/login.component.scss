@@ -3,6 +3,12 @@
   flex-direction: column;
   justify-content: center;
   height: 100vh;
+  background-image: url("../../../assets/login.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: -50px;
+  margin-bottom: -400px;
 
   &_cont {
     display: flex;
@@ -66,7 +72,7 @@
   &_actions {
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
     justify-content: space-between;
 
     &_login {

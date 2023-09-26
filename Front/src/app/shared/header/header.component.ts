@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Options} from "../../core/interfaces/options";
 import {Router} from "@angular/router";
+import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,13 @@ import {Router} from "@angular/router";
 export class HeaderComponent implements OnInit {
   pages: any[] = []
 
-  constructor(private router: Router) {
+  constructor(private router: Router,private scroller: ViewportScroller) {
   }
 
   ngOnInit(): void {
     this.initPages()
   }
+
   private initPages() {
     this.pages = [
       {
@@ -26,9 +28,9 @@ export class HeaderComponent implements OnInit {
           {value: "Page 4"},
         ]
       },
-      {label: "О нас", isDropdawn: false, isActive: false,refss:"#myhome"},
+      {label: "О нас", isDropdawn: false, isActive: false, refss: "#header"},
       {label: "Блог", isDropdawn: false, isActive: false},
-      {label: "Контакты", isDropdawn: false, isActive: false,refss:"#footer"},
+      {label: "Контакты", isDropdawn: false, isActive: false, refss: "#footer"},
     ]
   }
 
@@ -45,5 +47,11 @@ export class HeaderComponent implements OnInit {
 
   goToRegister() {
     this.router.navigate(['auth/register'])
+  }
+
+  goToMain() {
+    this.router.navigate([''])
+    this.scroller.scrollToAnchor("header");
+
   }
 }
