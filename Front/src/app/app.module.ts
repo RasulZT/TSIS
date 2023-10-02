@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {SharedModule} from "./shared/shared.module";
 import {HomeModule} from "./home/home.module";
+import { UserhomeComponent } from './UserIterface/userpage/userhome/userhome.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserhomeComponent
   ],
   imports: [
     BrowserModule,
