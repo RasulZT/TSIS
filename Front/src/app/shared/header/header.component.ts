@@ -41,6 +41,7 @@ export class HeaderComponent implements OnInit {
     this.pages[i].isActive = true
   }
 
+
   goToLogin() {
     this.router.navigate(['auth/login'])
   }
