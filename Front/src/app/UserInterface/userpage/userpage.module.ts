@@ -9,15 +9,18 @@ import { UsercoursesComponent } from './usercourses/usercourses.component';
 
 
 @NgModule({
-  declarations: [
-    UserhomeComponent,
-    UserheaderComponent,
-    ScheduleComponent,
-    UsercoursesComponent
-  ],
-  imports: [
-    CommonModule,
-    UserpageRoutingModule
-  ]
+    declarations: [
+        UserhomeComponent,
+        UserheaderComponent,
+        ScheduleComponent,
+        UsercoursesComponent
+    ],
+    exports: [
+        UserheaderComponent
+    ],
+    imports: [
+        CommonModule,
+        UserpageRoutingModule
+    ]
 })
 export class UserpageModule { }

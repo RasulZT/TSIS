@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {SharedModule} from "./shared/shared.module";
 import {HomeModule} from "./home/home.module";
 import { UserhomeComponent } from './UserIterface/userpage/userhome/userhome.component';
+import {UserpageModule} from "./UserInterface/userpage/userpage.module";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserhomeComponent } from './UserIterface/userpage/userhome/userhome.com
     AppRoutingModule,
     NgbModule,
     SharedModule,
-    HomeModule
+    HomeModule,
+    UserpageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
