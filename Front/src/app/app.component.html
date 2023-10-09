@@ -1,15 +1,10 @@
-<div class="d-flex flex-column" *ngIf="!authService.isLoggedIn()">
+<div class="d-flex flex-column" >
   <app-header class="myhead"></app-header>
   <div id="header"></div>
   <div class="my_router">
     <router-outlet></router-outlet>
   </div>
-
   <app-footer class="my_footer"></app-footer>
 </div>
 
 
-<div class="UserInterfaceDiv" *ngIf="authService.isLoggedIn()" >
-  <app-userheader></app-userheader>
-
-</div>

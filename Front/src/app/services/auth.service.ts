@@ -12,7 +12,7 @@ export class AuthService {
               private router: Router) {
   }
 
-  login(data: User) {
+  login(data: any) {
     this.httpClient.post( 'http://127.0.0.1:8000/' + 'auth/login', data).subscribe((response: any) => {
       localStorage.setItem('token', response.token)
       this.router.navigate(['user'])
@@ -22,7 +22,7 @@ export class AuthService {
   }
 
 
-  register(data: User) {
+  register(data: any) {
     this.httpClient.post('http://127.0.0.1:8000/' + 'auth/register', data).subscribe((response: any) => {
       this.router.navigate(['auth/login'])
     }, error => {

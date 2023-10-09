@@ -6,13 +6,12 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {SharedModule} from "./shared/shared.module";
 import {HomeModule} from "./home/home.module";
-import { UserhomeComponent } from './UserIterface/userpage/userhome/userhome.component';
 import {UserpageModule} from "./UserInterface/userpage/userpage.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UserhomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -20,9 +19,10 @@ import {UserpageModule} from "./UserInterface/userpage/userpage.module";
     NgbModule,
     SharedModule,
     HomeModule,
-    UserpageModule
+    UserpageModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
