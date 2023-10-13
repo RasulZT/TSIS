@@ -1,7 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Options} from "../../core/interfaces/options";
-import {Router} from "@angular/router";
+import {NavigationEnd, Router} from "@angular/router";
 import {ViewportScroller} from "@angular/common";
+import {AuthService} from "../../services/auth.service";
+import {filter} from "rxjs";
+import {TargetElementsService} from "../../services/target-elements.service";
 
 @Component({
   selector: 'app-header',
@@ -10,12 +13,34 @@ import {ViewportScroller} from "@angular/common";
 })
 export class HeaderComponent implements OnInit {
   pages: any[] = []
+  userLoggedIn: any;
+  routerPath = "";
 
-  constructor(private router: Router,private scroller: ViewportScroller) {
+  constructor(private router: Router, private scroller: ViewportScroller, private authServise: AuthService, private targetElementsService: TargetElementsService) {
+
   }
 
   ngOnInit(): void {
+    this.authServise.loggedIn$.subscribe(value => {
+      this.userLoggedIn = value
+    })
     this.initPages()
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: any) => {
+      this.routerPath = event.url
+      console.log(event.url)
+    });
+  }
+
+  scrollToTarget(id: string) {
+    const targetElement = this.targetElementsService.targetElements.find(element => element.id === id);
+    if (targetElement) {
+      const element = document.querySelector(targetElement.selector);
+      if (element) {
+        element.scrollIntoView({behavior: 'smooth'});
+      }
+    }
   }
 
   private initPages() {
@@ -28,9 +53,9 @@ export class HeaderComponent implements OnInit {
           {value: "Page 4"},
         ]
       },
-      {label: "О нас", isDropdawn: false, isActive: false, refss: "#header"},
+      {label: "О нас", isDropdawn: false, isActive: false, refss: "header"},
       {label: "Блог", isDropdawn: false, isActive: false},
-      {label: "Контакты", isDropdawn: false, isActive: false, refss: "#footer"},
+      {label: "Контакты", isDropdawn: false, isActive: false, refss: "footer"},
     ]
   }
 
@@ -41,9 +66,11 @@ export class HeaderComponent implements OnInit {
     this.pages[i].isActive = true
   }
 
-
   goToLogin() {
-    this.router.navigate(['auth/login'])
+    if (!this.userLoggedIn) {
+      this.router.navigate(['auth/login'])
+    } else
+      this.router.navigate(['user'])
   }
 
   goToRegister() {
@@ -55,4 +82,6 @@ export class HeaderComponent implements OnInit {
     this.scroller.scrollToAnchor("header");
 
   }
+
+  protected readonly toString = toString;
 }

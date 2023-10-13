@@ -16,7 +16,7 @@ export class LoginComponent {
   }
 
   ngOnInit(): void {
-    if(this.authService.isLoggedIn()){
+    if(this.authService.isLoggedIn){
       window.alert("Вы уже авторизованы")
       this.router.navigate([''])
     }
@@ -28,7 +28,6 @@ export class LoginComponent {
       password: this.password,
     }
     this.authService.login(data)
-
   }
 
   goToRegister() {
