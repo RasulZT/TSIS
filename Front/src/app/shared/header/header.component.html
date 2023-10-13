@@ -1,38 +1,80 @@
 <section class="ftco-section">
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container-fluid">
-      <img class="mylogo_img"  (click)="goToMain()" src="https://static.tildacdn.com/tild3162-3461-4238-a366-323466663732/_2day_academy.png"
+      <img class="mylogo_img" (click)="goToMain()"
+           src="https://static.tildacdn.com/tild3162-3461-4238-a366-323466663732/_2day_academy.png"
            width="130" height="55">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ftco-nav"
-              aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="fa fa-bars"></span> Menu
-      </button>
-      <div class="collapse navbar-collapse my_nav" id="ftco-nav">
-        <ul class="navbar-nav m-auto">
-          <li *ngFor="let item of pages;let i=index"
-              [ngClass]="{'nav_item_active':  item.isActive,
+      <ng-template
+        [ngIf]="!userLoggedIn && (routerPath =='/' || routerPath =='/auth/login' )">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa fa-bars"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse my_nav" id="ftco-nav">
+          <ul class="navbar-nav m-auto">
+            <li *ngFor="let item of pages;let i=index"
+                [ngClass]="{'nav_item_active':  item.isActive,
                'nav-item' :  !item.isActive}"
-              (click)="changeActive(i)">
-            <a href="{{item.refss}}" class="nav-link" *ngIf="!item.isDropdawn">{{item.label}}</a>
-                  <my_dropdown *ngIf="item.isDropdawn" [label]="item.label" [options]="item.items"></my_dropdown>
-          </li>
-        </ul>
+                (click)="changeActive(i)">
+              <a (click)="scrollToTarget(item.refss)" href="#" class="nav-link"
+                 *ngIf="!item.isDropdawn">{{item.label}}</a>
+              <my_dropdown *ngIf="item.isDropdawn" [label]="item.label" [options]="item.items"></my_dropdown>
+            </li>
+          </ul>
 
-      </div>
+        </div>
+      </ng-template>
+      <ng-template [ngIf]="userLoggedIn && routerPath =='/' ">
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa fa-bars"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse my_nav" id="ftco-nav">
+          <ul class="navbar-nav m-auto">
+            <li *ngFor="let item of pages;let i=index"
+                [ngClass]="{'nav_item_active':  item.isActive,
+               'nav-item' :  !item.isActive}"
+                (click)="changeActive(i)">
+              <a (click)="scrollToTarget(item.refss)" href="#" class="nav-link"
+                 *ngIf="!item.isDropdawn">{{item.label}}</a>
+              <my_dropdown *ngIf="item.isDropdawn" [label]="item.label" [options]="item.items"></my_dropdown>
+            </li>
+          </ul>
+
+        </div>
+      </ng-template>
+      <ng-template [ngIf]="userLoggedIn && routerPath =='/user'">
+
+
+      </ng-template>
+      <ng-template [ngIf]="!userLoggedIn">
         <div class="row authrow" style="width: 175px">
           <div class="col-6 m-auto authdiv">
             <p class="txt_login" (click)="goToLogin()">
-              Sign In
-            </p>
-          </div>
-          <div class="col-6 m-auto authdiv">
-            <p class="txt_login" (click)="goToRegister()">
-              Sign Up
+              {{ 'Войти' }}
             </p>
           </div>
         </div>
-
+      </ng-template>
+      <ng-template [ngIf]="userLoggedIn && routerPath!='/user'">
+        <div class="row authrow" style="width: 175px">
+          <div class="col-6 m-auto authdiv">
+            <p class="txt_login" (click)="goToLogin()">
+              {{ 'Мой профиль' }}
+            </p>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template [ngIf]="userLoggedIn && routerPath =='/user'">
+        <div class="row authrow" style="width: 175px">
+          <div class="col-6 m-auto authdiv">
+            <p class="txt_login" (click)="goToLogin()">
+              {{ 'Выйти' }}
+            </p>
+          </div>
+        </div>
+      </ng-template>
     </div>
   </nav>
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ export class RegisterComponent {
   name: string = ""
   selectedRole: string = "";
 
-  constructor(
+  constructor(private authService: AuthService,
               private router: Router) {
   }
 
@@ -26,6 +27,7 @@ export class RegisterComponent {
       name: this.name,
       role: this.selectedRole
     }
+    this.authService.register(data)
   }
 
   goToLogin() {
