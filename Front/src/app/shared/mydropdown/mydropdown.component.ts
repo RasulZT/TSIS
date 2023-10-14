@@ -21,7 +21,7 @@ export class MydropdownComponent implements OnInit {
     this.options.forEach((opt) => {
       opt.isActive = false;
     });
-    this.options.splice(0, 0, {value: '', isActive: true});
+    // this.options.splice(0, 0, {value: '', isActive: true});
   }
 
   toggleDropdown() {

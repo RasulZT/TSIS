@@ -5,6 +5,7 @@ import {ViewportScroller} from "@angular/common";
 import {AuthService} from "../../services/auth.service";
 import {filter} from "rxjs";
 import {TargetElementsService} from "../../services/target-elements.service";
+import {CourseService} from "../../services/course.service";
 
 @Component({
   selector: 'app-header',
@@ -15,22 +16,31 @@ export class HeaderComponent implements OnInit {
   pages: any[] = []
   userLoggedIn: any;
   routerPath = "";
+  courses: any[] = [];
 
-  constructor(private router: Router, private scroller: ViewportScroller, private authServise: AuthService, private targetElementsService: TargetElementsService) {
+  coursesName: { value: string }[] = [];
+
+
+  constructor(private router: Router, private scroller: ViewportScroller,
+              private authServise: AuthService, private targetElementsService: TargetElementsService,
+              private courseService: CourseService) {
 
   }
 
   ngOnInit(): void {
+    this.getCourses()
+    this.initPages()
     this.authServise.loggedIn$.subscribe(value => {
       this.userLoggedIn = value
     })
-    this.initPages()
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
       this.routerPath = event.url
       console.log(event.url)
     });
+
+
   }
 
   scrollToTarget(id: string) {
@@ -46,12 +56,7 @@ export class HeaderComponent implements OnInit {
   private initPages() {
     this.pages = [
       {
-        label: "Программы обучения", isDropdawn: true, isActive: false, items: [
-          {value: "Page 1"},
-          {value: "Page 2"},
-          {value: "Page 3"},
-          {value: "Page 4"},
-        ]
+        label: "Программы обучения", isDropdawn: true, isActive: false, items: this.coursesName
       },
       {label: "О нас", isDropdawn: false, isActive: false, refss: "header"},
       {label: "Блог", isDropdawn: false, isActive: false},
@@ -82,6 +87,19 @@ export class HeaderComponent implements OnInit {
     this.scroller.scrollToAnchor("header");
 
   }
+
+  getCourses(){
+    this.courseService.getCourses().subscribe((res: any) =>{
+      this.courses = res;
+
+      this.courses.forEach((course: any) => {
+        this.coursesName.push({ value: course?.name });
+      })
+      // console.log(this.coursesName);
+    })
+
+  }
+
 
   protected readonly toString = toString;
 }
