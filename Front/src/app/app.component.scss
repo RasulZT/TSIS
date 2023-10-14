@@ -1,8 +1,13 @@
 #header {
   height: 150px;
-  width: 100%;
+  width: 30%;
+  position: relative;
+  left:800px;
 }
-
+.userpage{
+  display: flex;
+  flex-direction: row;
+}
 .my_footer {
   position: relative;
 }

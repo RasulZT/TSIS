@@ -1,8 +1,11 @@
 <div class="d-flex flex-column" >
   <app-header class="myhead" ></app-header>
   <div id="header"></div>
-  <div class="my_router">
-    <router-outlet></router-outlet>
+  <div class="userpage">
+    <app-sidebar *ngIf="userLoggedIn && routerPath !='/' "></app-sidebar>
+    <div class="my_router">
+      <router-outlet></router-outlet>
+    </div>
   </div>
   <app-footer  class="my_footer"  ></app-footer>
 </div>

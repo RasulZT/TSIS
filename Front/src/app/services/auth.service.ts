@@ -10,6 +10,7 @@ import {BASE_URL} from "../core/constants/urls";
 })
 export class AuthService {
   loggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  role$:BehaviorSubject<string>=new BehaviorSubject<string>("");
   user: any;
 
   constructor(private httpClient: HttpClient,
@@ -30,22 +31,21 @@ export class AuthService {
   }
 
   getUser() {
-    const token = localStorage.getItem('token'); // Получаем токен из localStorage
-    if (token) {
-      // Если токен есть, добавляем его в заголовок запроса
-      const headers = new HttpHeaders({
-        'Authorization': `Token ${token}`
-      });
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Token ${token}`
+    });
 
-      const options = { headers: headers };
-      return this.httpClient.get(BASE_URL + 'auth/user', options);
+    const options = {headers: headers};
 
-    } else {
-      // Если токен отсутствует, вернем null или генерируем ошибку
-      return throwError('Token is missing'); // Генерировать ошибку
-      // или
-      // return of(null); // Вернуть null
-    }
+    return this.httpClient.get(BASE_URL + 'auth/user', options).subscribe((res: any) => {
+      this.user = res;
+      localStorage.setItem('role', res.role)
+      this.role$.next(res.role)
+      console.log(this.user);
+    }, error => {
+      // Обработка ошибки
+    });
   }
 
   register(data: any) {

@@ -50,29 +50,24 @@
       </ng-template>
       <ng-template [ngIf]="!userLoggedIn">
         <div class="row authrow" style="width: 175px">
-          <div class="col-6 m-auto authdiv">
             <p class="txt_login" (click)="goToLogin()">
               {{ 'Войти' }}
             </p>
           </div>
-        </div>
       </ng-template>
-      <ng-template [ngIf]="userLoggedIn && routerPath!='/user'">
+      <ng-template [ngIf]="userLoggedIn && routerPath=='/'">
         <div class="row authrow" style="width: 175px">
-          <div class="col-6 m-auto authdiv">
             <p class="txt_login" (click)="goToLogin()">
               {{ 'Мой профиль' }}
             </p>
-          </div>
         </div>
       </ng-template>
-      <ng-template [ngIf]="userLoggedIn && routerPath =='/user'">
-        <div class="row authrow" style="width: 175px">
-          <div class="col-6 m-auto authdiv">
-            <p class="txt_login" (click)="goToLogin()">
+      <ng-template [ngIf]="userLoggedIn && (routerPath =='/user' || routerPath=='/user/courses' || routerPath=='/user/add')">
+        <div class="authrow3">
+            <p class="role">Роль:   {{role}}</p>
+            <p class="quittxt" (click)="goToLogin()">
               {{ 'Выйти' }}
             </p>
-          </div>
         </div>
       </ng-template>
     </div>

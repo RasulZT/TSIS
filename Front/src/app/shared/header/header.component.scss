@@ -59,10 +59,34 @@ li{
   }
 
 }
+.role{
+  font-size: 18px;
+  color:white;
 
-.authdiv{
-  padding:0px;
+}
+.quittxt{
+  color:white;
+  font-size: 18px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 3px;
+  &:hover{
+    cursor: pointer;
+    color: rgb(141, 70, 246);
+  }
+
 }
 .authrow{
   margin: 0;
+  padding: 0;
+}
+.authrow3{
+  justify-content: center;
+  width: 250px;
+  display: flex;
+
+  flex-direction: row;
+  column-gap:30px;
+  padding: 5px;
+
 }

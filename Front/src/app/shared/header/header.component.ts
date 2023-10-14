@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   userLoggedIn: any;
   routerPath = "";
   courses: any[] = [];
+  role: any;
 
   coursesName: { value: string }[] = [];
 
@@ -30,6 +31,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.getCourses()
     this.initPages()
+    this.authServise.role$.subscribe(value => {
+      this.role = value
+    })
     this.authServise.loggedIn$.subscribe(value => {
       this.userLoggedIn = value
     })
@@ -88,12 +92,12 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  getCourses(){
-    this.courseService.getCourses().subscribe((res: any) =>{
+  getCourses() {
+    this.courseService.getCourses().subscribe((res: any) => {
       this.courses = res;
 
       this.courses.forEach((course: any) => {
-        this.coursesName.push({ value: course?.name });
+        this.coursesName.push({value: course?.name});
       })
       // console.log(this.coursesName);
     })
