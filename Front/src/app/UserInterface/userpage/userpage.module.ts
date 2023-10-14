@@ -3,21 +3,24 @@ import { CommonModule } from '@angular/common';
 
 import { UserpageRoutingModule } from './userpage-routing.module';
 import { UserhomeComponent } from './userhome/userhome.component';
-import { UserheaderComponent } from './userheader/userheader.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { UsercoursesComponent } from './usercourses/usercourses.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { AddComponent } from './add/add.component';
 
 
 @NgModule({
     declarations: [
         UserhomeComponent,
-        UserheaderComponent,
-        ScheduleComponent,
-        UsercoursesComponent
+       ScheduleComponent,
+        UsercoursesComponent,
+        SidebarComponent,
+        AddComponent
     ],
-    exports: [
-        UserheaderComponent
-    ],
+  exports: [
+    SidebarComponent
+
+  ],
     imports: [
         CommonModule,
         UserpageRoutingModule
