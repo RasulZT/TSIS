@@ -11,7 +11,8 @@ import {BASE_URL} from "../core/constants/urls";
 export class AuthService {
   loggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   role$:BehaviorSubject<string>=new BehaviorSubject<string>("");
-  user: any;
+  username$: BehaviorSubject<string>=new BehaviorSubject<string>("");
+  user="";
 
   constructor(private httpClient: HttpClient,
               private router: Router) {
@@ -39,10 +40,11 @@ export class AuthService {
     const options = {headers: headers};
 
     return this.httpClient.get(BASE_URL + 'auth/user', options).subscribe((res: any) => {
-      this.user = res;
+      this.user = res.name;
       localStorage.setItem('role', res.role)
       this.role$.next(res.role)
-      console.log(this.user);
+      this.username$.next(res.name)
+      // console.log(this.user);
     }, error => {
       // Обработка ошибки
     });

@@ -106,4 +106,8 @@ export class HeaderComponent implements OnInit {
 
 
   protected readonly toString = toString;
+
+  logOut() {
+    this.authServise.logout()
+  }
 }

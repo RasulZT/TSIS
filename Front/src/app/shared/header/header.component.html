@@ -65,7 +65,7 @@
       <ng-template [ngIf]="userLoggedIn && (routerPath =='/user' || routerPath=='/user/courses' || routerPath=='/user/add')">
         <div class="authrow3">
             <p class="role">Роль:   {{role}}</p>
-            <p class="quittxt" (click)="goToLogin()">
+            <p class="quittxt" (click)="logOut()">
               {{ 'Выйти' }}
             </p>
         </div>
