@@ -1,10 +1,13 @@
-*,*:before,*:after {
+*, *:before, *:after {
   box-sizing: border-box;
 }
-ul{
 
+ul {
+  margin-bottom: 100px;
   list-style: none;
+  padding-right: 100px;
 }
+
 :after {
   content: "";
 }
@@ -15,7 +18,7 @@ section {
 }
 
 h1 {
-  margin:80px 0 10px 0;
+  margin: 80px 0 10px 0;
   font-size: 52px;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
@@ -33,10 +36,10 @@ body {
   padding: 100px 0;
   background: lightblue;
   color: white;
-  max-width:640px;
+  max-width: 640px;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  line-height:1.4;
+  line-height: 1.4;
   font-smoothing: anti-aliased;
 }
 
@@ -58,35 +61,40 @@ nav ul li {
   cursor: pointer;
   background: rgb(33, 37, 41);
   text-transform: uppercase;
-  transition:all .4s ease-out;
+  transition: all .4s ease-out;
 }
 
 nav ul li:after {
   position: absolute;
   background: white;
   color: crimson;
-  top:0;
+  top: 0;
   left: 70px;
-  width: 70px; height: 100%;
-  opacity:.5;
+  border: 1px solid rgb(33, 37, 41);
+  width: 150px;
+  height: 100%;
+  opacity: .5;
   transform: perspective(400px) rotateY(90deg);
   transform-origin: 0 100%;
-  transition:all .4s ease-out;
+  transition: all .4s ease-out;
 }
 
-nav ul li:nth-child(1):after {
+.managerLi:nth-child(1):after {
   content: "Главная";
   line-height: 88px;
 }
-nav ul li:nth-child(2):after {
+
+.managerLi:nth-child(2):after {
   content: "Добавить ";
   line-height: 88px;
 }
-nav ul li:nth-child(3):after {
+
+.managerLi:nth-child(3):after {
   content: "Списки";
   line-height: 85px;
 }
-nav ul li:nth-child(4):after {
+
+.managerLi:nth-child(4):after {
   content: "Написать";
   line-height: 70px;
 }
@@ -97,7 +105,7 @@ nav ul li:hover {
 
 nav ul li:hover:after {
   opacity: 1;
-  transform: perspective(400px) rotateY(0deg) scale(1) ;
+  transform: perspective(400px) rotateY(0deg) scale(1);
 }
 
 
@@ -107,12 +115,14 @@ nav ul li > div {
   background: transparent;
 }
 
-nav ul li div { position: relative; }
+nav ul li div {
+  position: relative;
+}
 
 .roof {
   width: 0;
   height: 0;
-  top:2px;
+  top: 2px;
   border-style: solid;
   border-width: 0 21px 15px 21px;
   border-color: transparent transparent #ffffff transparent;
@@ -129,6 +139,7 @@ nav ul li div { position: relative; }
   border-width: 0 17px 12px 17px;
   border-color: transparent transparent black transparent;
 }
+
 /*white triangle over red triangle*/
 .roof-edge:after {
   position: absolute;
@@ -149,6 +160,7 @@ nav ul li div { position: relative; }
   margin: 0 auto;
   background: white;
 }
+
 /*door*/
 .front:after {
   position: absolute;
@@ -156,7 +168,7 @@ nav ul li div { position: relative; }
   width: 11px;
   height: 13px;
   bottom: 0;
-  left:9px;
+  left: 9px;
 }
 
 /*/// About me ////*/
@@ -189,25 +201,26 @@ nav ul li div { position: relative; }
   top: 3px;
   left: 14px;
 }
+
 /*//work//*/
 
 .paper {
   position: relative;
-  height:32px;
+  height: 32px;
   width: 29px;
   background: white;
-  border:2px solid white;
+  border: 2px solid white;
 }
 
 /*window*/
 .paper:after {
   position: absolute;
-  top:1px;
+  top: 1px;
   left: 0;
   width: 25px;
   height: 29px;
   background: white;
-  border-top:4px solid black;
+  border-top: 4px solid black;
 }
 
 
@@ -245,3 +258,336 @@ nav ul li div { position: relative; }
   border-color: transparent transparent white transparent;
 }
 
+
+// Для мэнеджера
+:after {
+  content: "";
+}
+
+section {
+  position: relative;
+  left: 100px;
+}
+
+h1 {
+  margin: 80px 0 10px 0;
+  font-size: 52px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px #DC143C,
+  2px 2px 0px #DC143C,
+  3px 3px 0px #DC143C,
+  4px 4px 0px #DC143C;
+}
+
+nav {
+  float: left;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+
+nav ul {
+  text-align: center;
+}
+
+nav ul li {
+  position: relative;
+  width: 70px;
+  cursor: pointer;
+  background: rgb(33, 37, 41);
+  text-transform: uppercase;
+  transition: all .4s ease-out;
+}
+
+nav ul li:after {
+  position: absolute;
+  background: white;
+  color: crimson;
+  top: 0;
+  left: 70px;
+  width: 150px;
+  height: 100%;
+  opacity: .5;
+  transform: perspective(400px) rotateY(90deg);
+  transform-origin: 0 100%;
+  transition: all .4s ease-out;
+}
+
+.studLi:nth-child(1):after {
+  content: "Главная";
+  line-height: 88px;
+}
+
+.studLi:nth-child(2):after {
+  content: "Расписание";
+  line-height: 88px;
+}
+
+.studLi:nth-child(3):after {
+  content: "Мои курсы";
+  display: flex; /* Включаем flex-контейнер */
+  justify-content: center;
+  align-items: center /* Выравниваем по центру по вертикали */
+}
+
+.studLi:nth-child(4):after {
+  content: "Чат";
+  line-height: 88px;
+}
+
+nav ul li:hover {
+  transform: translateX(-70px);
+}
+
+nav ul li:hover:after {
+  opacity: 1;
+  transform: perspective(400px) rotateY(0deg) scale(1);
+}
+
+
+nav ul li > div {
+  display: inline-block;
+  padding: 25px 0;
+  background: transparent;
+}
+
+nav ul li div {
+  position: relative;
+}
+
+.roof2 {
+  width: 0;
+  height: 0;
+  top: 2px;
+  border-style: solid;
+  border-width: 0 21px 15px 21px;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+.roof-edge2 {
+  position: absolute;
+  z-index: 20;
+  left: -17px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 17px 12px 17px;
+  border-color: transparent transparent black transparent;
+}
+
+/*white triangle over red triangle*/
+.roof-edge2:after {
+  position: absolute;
+  left: -14.5px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14.5px 10px 14.5px;
+  border-color: transparent transparent white transparent;
+}
+
+.front2 {
+  position: relative;
+  top: 3px;
+  width: 28.5px;
+  height: 20px;
+  margin: 0 auto;
+  background: white;
+}
+
+/*door*/
+.front2:after {
+  position: absolute;
+  background: black;
+  width: 11px;
+  height: 13px;
+  bottom: 0;
+  left: 9px;
+}
+
+/*/// About me ////*/
+
+.head2 {
+  width: 32px;
+  height: 35px;
+  background: white;
+  border-radius: 8px;
+}
+
+/* Книги */
+.head2:after {
+  content: "";
+  width: 20px;
+  height: 8px;
+  background: black;
+  position: absolute;
+  top: 13px;
+  left: 6px;
+}
+
+/* Вертикальная полоса между книгами */
+.head2:before {
+  content: "";
+  width: 4px;
+  height: 28px;
+  background: black;
+  position: absolute;
+  top: 3px;
+  left: 14px;
+}
+
+/*//work//*/
+
+
+/*//mail //*/
+
+.mail-base2 {
+  position: relative;
+  width: 32px;
+  height: 18px;
+  background: white;
+}
+
+.mail-top2 {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform: rotate(180deg);
+  border-style: solid;
+  border-width: 0 16px 11px 16px;
+  border-color: transparent transparent black transparent;
+}
+
+.mail-top2:after {
+  position: absolute;
+  z-index: 20;
+  left: -16px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 16px 9px 16px;
+  border-color: transparent transparent white transparent;
+}
+
+
+//Для Учителя
+
+
+.TeachLi:nth-child(1):after {
+  content: "Главная";
+  line-height: 88px;
+}
+
+.TeachLi:nth-child(2):after {
+  content: "Расписание";
+  line-height: 88px;
+}
+
+.TeachLi:nth-child(3):after {
+  content: "Уроки";
+  display: flex; /* Включаем flex-контейнер */
+  justify-content: center;
+  align-items: center /* Выравниваем по центру по вертикали */
+}
+
+.TeachLi:nth-child(4):after {
+  content: "Журнал";
+  line-height: 88px;
+}
+
+.TeachLi:nth-child(5):after {
+  content: "Чат";
+  line-height: 88px;
+}
+
+.roof3 {
+  width: 0;
+  height: 0;
+  top: 2px;
+  border-style: solid;
+  border-width: 0 21px 15px 21px;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+.roof-edge3 {
+  position: absolute;
+  z-index: 20;
+  left: -17px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 17px 12px 17px;
+  border-color: transparent transparent black transparent;
+}
+
+/*white triangle over red triangle*/
+.roof-edge3:after {
+  position: absolute;
+  left: -14.5px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14.5px 10px 14.5px;
+  border-color: transparent transparent white transparent;
+}
+
+.front3 {
+  position: relative;
+  top: 3px;
+  width: 28.5px;
+  height: 20px;
+  margin: 0 auto;
+  background: white;
+}
+
+/*door*/
+.front3:after {
+  position: absolute;
+  background: black;
+  width: 11px;
+  height: 13px;
+  bottom: 0;
+  left: 9px;
+}
+
+.mail-base3 {
+  position: relative;
+  width: 32px;
+  height: 18px;
+  background: white;
+}
+
+.mail-top3 {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform: rotate(180deg);
+  border-style: solid;
+  border-width: 0 16px 11px 16px;
+  border-color: transparent transparent black transparent;
+}
+
+.mail-top3:after {
+  position: absolute;
+  z-index: 20;
+  left: -16px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 16px 9px 16px;
+  border-color: transparent transparent white transparent;
+}

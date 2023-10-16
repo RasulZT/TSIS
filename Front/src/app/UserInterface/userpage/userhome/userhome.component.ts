@@ -7,13 +7,24 @@ import {Router} from "@angular/router";
   templateUrl: './userhome.component.html',
   styleUrls: ['./userhome.component.scss']
 })
-export class UserhomeComponent implements OnInit{
+export class UserhomeComponent implements OnInit {
+  user: any;
+  username:any;
 
-  constructor(private authService:AuthService,private router:Router) {
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.authService.getUser()
+    this.authService.username$.subscribe(
+      value => {
+        this.username=value
+        console.log(this.username)
+      }
+    )
+    this.user=this.authService.user;
+    console.log(this.user)
+
   }
 
 }

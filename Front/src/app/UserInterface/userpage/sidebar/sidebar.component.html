@@ -1,32 +1,99 @@
 <nav>
-  <ul>
-    <li (click)="openHomePage()" >
-      <div class="home-icon">
-        <div class="roof">
-          <div class="roof-edge"></div>
+  <ng-template [ngIf]="role==='Manager'">
+    <ul>
+      <li class="managerLi" (click)="openHomePage()">
+        <div class="home-icon">
+          <div class="roof">
+            <div class="roof-edge"></div>
+          </div>
+          <div class="front"></div>
         </div>
-        <div class="front"></div>
-      </div>
-    </li>
-    <li (click)="openAddTab()">
-      <div class="about-icon">
-        <div class="head">
-          <div class="eyes"></div>
-          <div class="beard"></div>
+      </li>
+      <li class="managerLi" (click)="openAddTab()">
+        <div class="about-icon">
+          <div class="head">
+            <div class="eyes"></div>
+            <div class="beard"></div>
+          </div>
         </div>
-      </div>
-    </li>
-    <li (click)="openCourses()">
-      <div class="work-icon">
-        <div class="paper"></div>
-      </div>
-    </li>
-    <li>
-      <div class="mail-icon">
-        <div class="mail-base">
-          <div class="mail-top"></div>
+      </li>
+      <li class="managerLi" (click)="openCourses()">
+        <div class="work-icon">
+          <div class="paper"></div>
         </div>
-      </div>
-    </li>
-  </ul>
+      </li>
+      <li class="managerLi" >
+        <div class="mail-icon">
+          <div class="mail-base">
+            <div class="mail-top"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </ng-template>
+  <ng-template [ngIf]="role==='Student'">
+    <ul>
+      <li class="studLi">
+        <div class="home-icon2">
+          <div class="roof2">
+            <div class="roof-edge2"></div>
+          </div>
+          <div class="front2"></div>
+        </div>
+      </li>
+      <li class="studLi">
+        <div class="about-icon2">
+          <img src="assets/icons/icons8-расписание-50.png">
+        </div>
+      </li>
+      <li class="studLi">
+        <div class="work-icon2">
+          <img src="assets/icons/icons8-курсы-50.png">
+        </div>
+      </li>
+      <li class="studLi">
+        <div class="mail-icon2">
+          <div class="mail-base2">
+            <div class="mail-top2"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </ng-template>
+
+  <ng-template [ngIf]="role==='Teacher'">
+    <ul>
+      <li  class="TeachLi">
+        <div class="home-icon3">
+          <div class="roof3">
+            <div class="roof-edge3"></div>
+          </div>
+          <div class="front3"></div>
+        </div>
+      </li>
+      <li (click)="openSchedule()" class="TeachLi">
+        <div class="about-icon3">
+          <img src="assets/icons/icons8-расписание-50.png">
+        </div>
+      </li>
+      <li class="TeachLi">
+        <div class="work-icon3">
+          <img src="assets/icons/icons8-курсы-50.png">
+        </div>
+      </li>
+      <li class="TeachLi">
+        <div class="work-icon3">
+          <img src="assets/icons/icons8-журнал-64.png">
+        </div>
+      </li>
+      <li class="TeachLi">
+        <div class="mail-icon3">
+          <div class="mail-base3">
+            <div class="mail-top3"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </ng-template>
+
 </nav>
