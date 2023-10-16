@@ -1,6 +1,7 @@
 import {Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 import {Options} from "../../core/interfaces/options";
 import {NgForm} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'my_dropdown',
@@ -8,7 +9,7 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./mydropdown.component.scss']
 })
 export class MydropdownComponent implements OnInit {
-  constructor() {
+  constructor(private router:Router) {
   }
 
   public isDropDownOpen: boolean = false;
@@ -32,6 +33,8 @@ export class MydropdownComponent implements OnInit {
     this.options.forEach((opt: any, index: number) => {
       opt.isActive = optionIndex === index;
     });
+    this.router.navigate(['/user'])
+    console.log("hello")
     this.dropdown = evt.target.innerHTML;
   }
 
@@ -49,5 +52,9 @@ export class MydropdownComponent implements OnInit {
     if(!clickInside){
       this.isDropDownOpen=false
     }
+  }
+
+  OpenCourse() {
+
   }
 }

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from Auth.views import RegisterView,UserView
+from Auth.views import RegisterView, UserView, SetCoursesView
 from rest_framework.authtoken import views
 
 urlpatterns = [

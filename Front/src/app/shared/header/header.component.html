@@ -38,7 +38,7 @@
                 (click)="changeActive(i)">
               <a (click)="scrollToTarget(item.refss)" href="#" class="nav-link"
                  *ngIf="!item.isDropdawn">{{item.label}}</a>
-              <my_dropdown *ngIf="item.isDropdawn" [label]="item.label" [options]="item.items"></my_dropdown>
+              <my_dropdown *ngIf="item.isDropdawn"  [label]="item.label" [options]="item.items"></my_dropdown>
             </li>
           </ul>
 

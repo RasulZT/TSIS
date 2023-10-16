@@ -1,0 +1,99 @@
+.schedule {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.schedule-dates {
+  flex: 0 0 100px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ccc;
+}
+
+.empty-cell {
+  height: 30px;
+}
+
+.date {
+  padding: 10px;
+  text-align: center;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+}
+
+.schedule-content {
+  flex: 1;
+  display: flex;
+}
+
+.time-column {
+  padding: 10px;
+  flex: 0 0 80px;
+  display: flex;
+  margin-top: 150px;
+  margin-bottom: 30px;
+  flex-direction: column;
+  border-right: 1px solid #ccc;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.time {
+  padding: 10px;
+  text-align: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.schedule-week {
+  display: flex;
+  flex: 1;
+}
+
+.day {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.day-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.day-events {
+  /* Здесь можно добавить стили для событий в расписании */
+}
+.lesson {
+  margin-top: 170px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  width: 80%;
+  height: 95px;
+  box-sizing: border-box;
+}
+
+.lesson-title {
+  font-weight: bold;
+}
+
+.lesson-time {
+  font-size: 12px;
+}
+
+/* Стили для границ уроков */
+.lesson::before {
+  content: '';
+  top: 0;
+  left: 0;
+  width: 5px;
+  background-color: #007bff;
+}

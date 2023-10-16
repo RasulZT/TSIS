@@ -1,1 +1,34 @@
-<p>raspisanie works!</p>
+<div class="schedule">
+  <div class="schedule-dates">
+    <div class="empty-cell"></div>
+    <div class="date">Пн 01.01</div>
+    <div class="date">Вт 02.01</div>
+    <!-- Добавьте даты для каждого дня недели -->
+  </div>
+  <div class="schedule-content">
+    <div class="time-column">
+      <div class="time">08:00</div>
+      <div class="time">09:00</div>
+      <div class="time">10:00</div>
+      <div class="time">01:00</div>
+      <div class="time">12:00</div>
+      <div class="time">13:00</div>
+      <div class="time">14:00</div>
+      <div class="time">15:00</div>
+      <div class="time">16:00</div>
+      <div class="time">17:00</div>
+      <!-- Добавьте временные интервалы по вашему расписанию -->
+    </div>
+    <div class="schedule-week">
+      <div class="day" *ngFor="let day of days">
+        <div class="day-header">{{ day.name }}</div>
+        <div class="day-events">
+          <div class="lesson" *ngFor="let lesson of day.lessons" >
+            <div class="lesson-title">{{ lesson.title }}</div>
+            <div class="lesson-time">{{ lesson.startTime }} - {{ lesson.endTime }}</div>
+          </div>
+        </div>
+      </div>     <!-- Продолжайте для остальных дней недели -->
+    </div>
+  </div>
+</div>
