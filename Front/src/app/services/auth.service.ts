@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Router} from "@angular/router";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../core/interfaces/user";
-import {BehaviorSubject, Subject, throwError} from "rxjs";
+import {BehaviorSubject, Observable, Subject, throwError} from "rxjs";
 import {BASE_URL} from "../core/constants/urls";
 
 @Injectable({
@@ -50,12 +50,17 @@ export class AuthService {
     });
   }
 
-  register(data: any) {
-    this.httpClient.post('http://127.0.0.1:8000/' + 'auth/register', data).subscribe((response: any) => {
-      this.router.navigate(['auth/login'])
-    }, error => {
-      alert("Произошла ошибка при регистрации попробуйте заново")
-    })
+  register(data: any): Observable<any> {
+    return this.httpClient.post(BASE_URL + 'auth/register', data);
+  }
+
+  setCourses(userId: number, courses: number[]): Observable<any> {
+    const data = {
+      userId: userId,
+      courses: courses
+    };
+
+    return this.httpClient.post(BASE_URL + 'auth/set-courses', data);
   }
 
   logout() {
