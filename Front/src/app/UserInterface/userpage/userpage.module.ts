@@ -17,7 +17,6 @@ import { RaspisanieComponent } from './raspisanie/raspisanie.component';
 @NgModule({
     declarations: [
         UserhomeComponent,
-       ScheduleComponent,
         UsercoursesComponent,
         SidebarComponent,
         AddComponent,
