@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
 import {CourseService} from "../../../services/course.service";
@@ -8,11 +8,14 @@ import {CourseService} from "../../../services/course.service";
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.scss']
 })
-export class AddComponent {
+export class AddComponent implements OnInit{
   showAddStudent: boolean = false;
   showAdditional: boolean = false;
   showAddCourse: boolean = false;
   showAddTeacher: boolean = false;
+  showUpdateStudent: boolean = false;
+  showUpdateCourse: boolean = false;
+  updCourseFields: boolean = false;
 
   username: string = ""
   password: string = ""
@@ -41,6 +44,15 @@ export class AddComponent {
     this.showAdditional = true;
   }
 
+  courseAddTable() {
+    this.showAddCourse = true;
+    this.showAdditional = true;
+  }
+  teacherAddTable() {
+    this.showAddTeacher = true;
+    this.showAdditional = true;
+  }
+
   registerStudent() {
     let data = {
       username: this.username,
@@ -58,6 +70,8 @@ export class AddComponent {
               error => {
           });
       }, error => {});
+
+    this.cancel();
   }
 
   addCourse() {
@@ -68,36 +82,7 @@ export class AddComponent {
     }
     console.log(this.selectedCourses)
     this.courseService.postCourse(data)
-  }
-
-
-
-
-  updateSelectedCourses(id: number) {
-    if (this.selectedCourses.includes(id)) {
-      this.selectedCourses = this.selectedCourses.filter(selectedCourse => selectedCourse !== id);
-    } else {
-      this.selectedCourses.push(id);
-    }
-  }
-
-  cancel() {
-    this.showAdditional = false;
-    this.showAddStudent = false;
-    this.showAddCourse = false;
-    this.showAddTeacher = false;
-    this.selectedCourses = [];
-    this.name = '';
-    this.username = '';
-    this.password = '';
-    this.description = '';
-    this.level = '';
-
-  }
-
-  courseAddTable() {
-    this.showAddCourse = true;
-    this.showAdditional = true;
+    this.cancel();
   }
 
   registerTeacher() {
@@ -117,10 +102,47 @@ export class AddComponent {
             error => {
             });
       }, error => {});
+    this.cancel();
   }
 
-  teacherAddTable() {
-    this.showAddTeacher = true;
+  courseUpdTable() {
     this.showAdditional = true;
+    this.showUpdateCourse = true;
+  }
+
+
+
+  updateSelectedCourses(id: number) {
+    if (this.selectedCourses.includes(id)) {
+      this.selectedCourses = this.selectedCourses.filter(selectedCourse => selectedCourse !== id);
+    } else {
+      this.selectedCourses.push(id);
+    }
+  }
+
+  cancel() {
+    this.showAdditional = false;
+    this.showAddStudent = false;
+    this.showAddCourse = false;
+    this.showAddTeacher = false;
+    this.showUpdateCourse = false;
+    this.updCourseFields = false;
+    this.selectedCourses = [];
+    this.name = '';
+    this.username = '';
+    this.password = '';
+    this.description = '';
+    this.level = '';
+
+  }
+
+  updCourse() {
+    this.showUpdateCourse = false;
+    this.updCourseFields = true;
+  }
+
+  cancelUpd() {
+    this.updCourseFields = false;
+    this.showUpdateCourse = true;
   }
 }

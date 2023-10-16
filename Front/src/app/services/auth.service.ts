@@ -72,4 +72,5 @@ export class AuthService {
   get isLoggedIn() {
     return this.loggedIn$.getValue();
   }
+
 }

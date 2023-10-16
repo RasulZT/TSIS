@@ -41,9 +41,10 @@
 .frm-div{
   display: flex;
   justify-content: center;
+  margin: auto;
   border-radius: 15px;
   padding: 50px;
-  max-width: 750px;
+  max-width: 700px;
   //background-color: #e8e5f9;
   background-color: #f4f5fa;
 
@@ -101,5 +102,20 @@
     &:hover{
       opacity: 0.9;
     }
+  }
+}
+
+.courseAdd_div{
+  margin: 0;
+}
+
+.courses_name{
+  margin-bottom: 12px;
+  font-size: 26px;
+
+
+  &:hover{
+    cursor: pointer;
+    text-decoration: underline;
   }
 }

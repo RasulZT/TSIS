@@ -9,8 +9,6 @@ import { AddComponent } from './add/add.component';
 import {FormsModule} from "@angular/forms";
 import { JournalComponent } from './journal/journal.component';
 import { TasksComponent } from './tasks/tasks.component';
-import {DropDownListModule} from "@syncfusion/ej2-angular-dropdowns";
-import {ScheduleModule} from "@syncfusion/ej2-angular-schedule";
 import { RaspisanieComponent } from './raspisanie/raspisanie.component';
 
 
@@ -31,8 +29,6 @@ import { RaspisanieComponent } from './raspisanie/raspisanie.component';
   imports: [
     CommonModule,
     UserpageRoutingModule,
-    DropDownListModule,
-    ScheduleModule,
     FormsModule
   ]
 })

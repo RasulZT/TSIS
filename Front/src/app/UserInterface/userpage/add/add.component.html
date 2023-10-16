@@ -50,7 +50,7 @@
           Добавить курс
         </button>
 
-        <button>
+        <button (click)="courseUpdTable()">
           Обновить курс
         </button>
 
@@ -107,7 +107,7 @@
     <textarea placeholder="Описание" [(ngModel)]="description"></textarea>
     <input type="text" placeholder="Уровень"  [(ngModel)]="level">
 
-    <div class="form_actions col d-flex justify-content-center">
+    <div class="form_actions d-flex justify-content-center">
       <button (click)="addCourse()">
         Добавить
       </button>
@@ -149,3 +149,24 @@
     </div>
   </div>
 </div>
+
+<div class="courseAdd_div row d-flex justify-content-center" *ngIf="showUpdateCourse === true">
+  <div class="frm-div row ">
+    <div class="frm_header">
+      Выберите курс
+    </div>
+    <div class="allCourses d-flex justify-content-center"  *ngFor="let course of courses">
+      <div class="courses_name" (click)="updCourse()">
+        {{course.name}} ({{course.level}})
+      </div>
+    </div>
+
+      <div class="form_actions col d-flex justify-content-center">
+        <button (click)="cancel()">
+          Отмена
+        </button>
+      </div>
+  </div>
+
+</div>
+
