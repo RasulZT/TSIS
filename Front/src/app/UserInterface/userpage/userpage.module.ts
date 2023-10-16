@@ -7,6 +7,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { UsercoursesComponent } from './usercourses/usercourses.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AddComponent } from './add/add.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AddComponent } from './add/add.component';
   ],
     imports: [
         CommonModule,
-        UserpageRoutingModule
+        UserpageRoutingModule,
+        FormsModule
     ]
 })
 export class UserpageModule { }

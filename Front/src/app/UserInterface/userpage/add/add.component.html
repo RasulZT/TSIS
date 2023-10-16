@@ -1,1 +1,151 @@
-<p>add works!</p>
+<div class="container-main d-flex justify-content-center">
+  <div class="container_choice col-9 d-flex justify-content-center" *ngIf="showAdditional === false">
+    <div class="choices">
+      <div class="choice_icon d-flex justify-content-center">
+        <img src="assets/student_icon.jpg" style="height: 100px; width: 100px">
+      </div>
+
+      <div class="choices_button">
+        <button (click)="studentAddTable()">
+          Добавить ученика
+        </button>
+
+        <button>
+          Обновить ученика
+        </button>
+
+        <button>
+          Удалить ученика
+        </button>
+      </div>
+    </div>
+
+    <div class="choices">
+      <div class="choice_icon d-flex justify-content-center">
+        <img src="assets/teacher_icon.jpg" style="height: 100px; width: 100px">
+      </div>
+
+      <div class="choices_button">
+        <button (click)="teacherAddTable()">
+          Добавить учителя
+        </button>
+
+        <button>
+          Обновить учителя
+        </button>
+
+        <button>
+          Удалить учителя
+        </button>
+      </div>
+    </div>
+
+    <div class="choices">
+      <div class="choice_icon d-flex justify-content-center">
+        <img src="assets/courses_icon.png" style="height: 100px; width: 100px">
+      </div>
+
+      <div class="choices_button">
+        <button (click)="courseAddTable()">
+          Добавить курс
+        </button>
+
+        <button>
+          Обновить курс
+        </button>
+
+        <button>
+          Удалить курс
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="studAdd_div d-flex justify-content-center" *ngIf="showAddStudent === true">
+  <div class="frm-div row">
+    <div class="frm_header">
+      Добавить ученика
+    </div>
+
+    <input type="text" placeholder="Имя/Ник" [(ngModel)]="name">
+    <input type="text" placeholder="Эл.почта" [(ngModel)]="username">
+    <input type="text" placeholder="Пароль"  [(ngModel)]="password">
+    <p>
+      Курс(ы)
+    </p>
+
+    <form>
+      <label *ngFor="let course of courses" style="margin-right: 20px">
+        <input type="checkbox" [value]="course" (change)="updateSelectedCourses(course.id)"
+               style="height: 16px; width: 16px;">
+        {{course.name}} ({{course.level}})
+      </label>
+    </form>
+
+    <div class="form_actions col d-flex justify-content-center">
+      <button (click)="registerStudent()">
+        Добавить
+      </button>
+      <button (click)="cancel()">
+        Отмена
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<div class="courseAdd_div d-flex justify-content-center" *ngIf="showAddCourse === true">
+  <div class="frm-div row">
+    <div class="frm_header">
+      Добавить курс
+    </div>
+
+    <input type="text" placeholder="Название" [(ngModel)]="name">
+    <textarea placeholder="Описание" [(ngModel)]="description"></textarea>
+    <input type="text" placeholder="Уровень"  [(ngModel)]="level">
+
+    <div class="form_actions col d-flex justify-content-center">
+      <button (click)="addCourse()">
+        Добавить
+      </button>
+      <button (click)="cancel()">
+        Отмена
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="teacherAdd_div d-flex justify-content-center" *ngIf="showAddTeacher === true">
+  <div class="frm-div row">
+    <div class="frm_header">
+      Добавить учителя
+    </div>
+
+    <input type="text" placeholder="Имя/Ник" [(ngModel)]="name">
+    <input type="email" placeholder="Эл.почта" [(ngModel)]="username">
+    <input type="text" placeholder="Пароль"  [(ngModel)]="password">
+    <p>
+      Курс(ы)
+    </p>
+
+    <form>
+      <label *ngFor="let course of courses" style="margin-right: 20px">
+        <input type="checkbox" [value]="course" (change)="updateSelectedCourses(course.id)"
+               style="height: 16px; width: 16px;">
+        {{course.name}} ({{course.level}})
+      </label>
+    </form>
+
+    <div class="form_actions col d-flex justify-content-center">
+      <button (click)="registerTeacher()">
+        Добавить
+      </button>
+      <button (click)="cancel()">
+        Отмена
+      </button>
+    </div>
+  </div>
+</div>
