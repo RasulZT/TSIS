@@ -137,8 +137,8 @@ export class AddComponent implements OnInit{
   }
 
   updCourse() {
-    this.showUpdateCourse = false;
-    this.updCourseFields = true;
+    // this.showUpdateCourse = false;
+    // this.updCourseFields = true;
   }
 
   cancelUpd() {
