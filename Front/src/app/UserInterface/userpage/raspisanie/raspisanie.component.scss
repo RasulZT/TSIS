@@ -33,7 +33,7 @@
   padding: 10px;
   flex: 0 0 80px;
   display: flex;
-  margin-top: 150px;
+  margin-top: 35px;
   margin-bottom: 30px;
   flex-direction: column;
   border-right: 1px solid #ccc;
@@ -43,6 +43,7 @@
 
 .time {
   padding: 10px;
+  height: 60px;
   text-align: center;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
@@ -71,14 +72,14 @@
   /* Здесь можно добавить стили для событий в расписании */
 }
 .lesson {
-  margin-top: 170px;
-  background-color: #007bff;
+  background-color: rgb(33, 37, 41);
   color: #fff;
   border-radius: 5px;
   padding: 10px;
   width: 80%;
-  height: 95px;
   box-sizing: border-box;
+  border: 1px solid black;
+
 }
 
 .lesson-title {

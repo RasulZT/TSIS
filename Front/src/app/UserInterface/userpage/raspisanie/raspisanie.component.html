@@ -10,7 +10,7 @@
       <div class="time">08:00</div>
       <div class="time">09:00</div>
       <div class="time">10:00</div>
-      <div class="time">01:00</div>
+      <div class="time">11:00</div>
       <div class="time">12:00</div>
       <div class="time">13:00</div>
       <div class="time">14:00</div>
@@ -23,7 +23,7 @@
       <div class="day" *ngFor="let day of days">
         <div class="day-header">{{ day.name }}</div>
         <div class="day-events">
-          <div class="lesson" *ngFor="let lesson of day.lessons" >
+          <div class="lesson" *ngFor="let lesson of day.lessons; let i = index"  [style.margin-top]="lessonMargin(day.lessons,i)" [style.height]="lessonHeight(lesson.startTime, lesson.endTime)" >
             <div class="lesson-title">{{ lesson.title }}</div>
             <div class="lesson-time">{{ lesson.startTime }} - {{ lesson.endTime }}</div>
           </div>

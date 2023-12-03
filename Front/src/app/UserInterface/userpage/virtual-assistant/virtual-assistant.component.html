@@ -1,0 +1,16 @@
+<div class="assistant-container" *ngIf="!isChatOpen" >
+  <div class="speech-bubble">
+    Задайте вопросы
+  </div>
+  <img src="assets/icons/assistant-icon.png" (click)="toggleChat()"  alt="Assistant Icon">
+</div>
+
+
+<div class="chat-window" *ngIf="isChatOpen">
+  <img src="assets/icons/icons8-close-30.png" (click)="closeChat()" class="icon_close">
+  <p class="title_txt">Что ты хочешь узнать?</p>
+
+
+
+
+</div>

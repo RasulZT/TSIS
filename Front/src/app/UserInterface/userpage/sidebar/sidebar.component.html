@@ -63,7 +63,7 @@
 
   <ng-template [ngIf]="role==='Teacher'">
     <ul>
-      <li  class="TeachLi">
+      <li (click)="openHomePage()" class="TeachLi">
         <div class="home-icon3">
           <div class="roof3">
             <div class="roof-edge3"></div>
@@ -76,7 +76,7 @@
           <img src="assets/icons/icons8-расписание-50.png">
         </div>
       </li>
-      <li class="TeachLi">
+      <li  class="TeachLi">
         <div class="work-icon3">
           <img src="assets/icons/icons8-курсы-50.png">
         </div>

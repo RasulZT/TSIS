@@ -13,6 +13,7 @@ import {DropDownListModule} from "@syncfusion/ej2-angular-dropdowns";
 import {ScheduleModule} from "@syncfusion/ej2-angular-schedule";
 import {RaspisanieComponent} from './raspisanie/raspisanie.component';
 import { CourseInfoComponent } from './course-info/course-info.component';
+import { VirtualAssistantComponent } from './virtual-assistant/virtual-assistant.component';
 
 
 @NgModule({
@@ -25,11 +26,13 @@ import { CourseInfoComponent } from './course-info/course-info.component';
     TasksComponent,
     RaspisanieComponent,
     CourseInfoComponent,
+    VirtualAssistantComponent,
   ],
-  exports: [
-    SidebarComponent
+    exports: [
+        SidebarComponent,
+        VirtualAssistantComponent
 
-  ],
+    ],
   imports: [
     CommonModule,
     UserpageRoutingModule,

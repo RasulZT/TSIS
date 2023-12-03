@@ -1,0 +1,51 @@
+.assistant-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+.speech-bubble {
+  display: block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  font-size: 12px;
+
+}
+.chat-window {
+  display: flex;
+  flex-direction:row;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: rgba(248, 245, 245, 0.9);
+  border: 1px solid #0e0d0e;
+  border-radius: 20px;
+  z-index: 1000;
+  overflow: hidden;
+  padding:10px;
+}
+
+.title_txt{
+  font-size:18px;
+  font-family: SansSerif, serif;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+.icon_close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 5px;
+  background-color: #ccc;
+  border-radius: 0 0 0 5px;
+}
+

@@ -62,7 +62,7 @@
             </p>
         </div>
       </ng-template>
-      <ng-template [ngIf]="userLoggedIn && (routerPath =='/user' || routerPath=='/user/courses' || routerPath=='/user/add')">
+      <ng-template [ngIf]="userLoggedIn && (routerPath =='/user' || routerPath=='/user/courses' || routerPath=='/user/add ' || routerPath=='/user/schedule')">
         <div class="authrow3">
             <p class="role">Роль:   {{role}}</p>
             <p class="quittxt" (click)="logOut()">
