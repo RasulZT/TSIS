@@ -1,0 +1,31 @@
+<div class="courseAdd_div d-flex justify-content-center">
+  <div class="frm-div row">
+    <div class="frm_header">
+      Добавить курс
+    </div>
+
+    <form [formGroup]="addCoursesForm">
+      <input type="text" placeholder="Название" formControlName="name">
+      <span *ngIf="courseName && courseName.invalid && courseName.touched" class="invalid" style="color: #DB0916; font-size: 15px; margin-left: 5px">
+        *Обязательное поле
+      </span>
+      <textarea placeholder="Описание" formControlName="description"></textarea>
+      <span *ngIf="description && description.invalid && description.touched" class="invalid" style="color: #DB0916; font-size: 15px; margin-left: 5px">
+        *Обязательное поле
+      </span>
+      <input type="text" placeholder="Уровень" formControlName= "level">
+      <span *ngIf="level && level.invalid && level.touched" class="invalid" style="color: #DB0916; font-size: 15px; margin-left: 5px">
+        *Обязательное поле
+      </span>
+    </form>
+
+    <div class="form_actions d-flex justify-content-center">
+      <button [disabled]="addCoursesForm.invalid" (click)="addCourse()">
+        Добавить
+      </button>
+      <button type="button" (click)="goBack()">
+        Отмена
+      </button>
+    </div>
+  </div>
+</div>

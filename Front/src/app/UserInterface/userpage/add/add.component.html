@@ -1,12 +1,12 @@
 <div class="container-main d-flex justify-content-center">
-  <div class="container_choice col-9 d-flex justify-content-center" *ngIf="showAdditional === false">
+  <div class="container_choice col-9 d-flex justify-content-center">
     <div class="choices">
       <div class="choice_icon d-flex justify-content-center">
         <img src="assets/student_icon.jpg" style="height: 100px; width: 100px">
       </div>
 
       <div class="choices_button">
-        <button (click)="studentAddTable()">
+        <button (click)="addStudent()">
           Добавить ученика
         </button>
 
@@ -26,7 +26,7 @@
       </div>
 
       <div class="choices_button">
-        <button (click)="teacherAddTable()">
+        <button (click)="addTeacher()">
           Добавить учителя
         </button>
 
@@ -46,15 +46,15 @@
       </div>
 
       <div class="choices_button">
-        <button (click)="courseAddTable()">
+        <button (click)="addCourse()">
           Добавить курс
         </button>
 
-        <button (click)="courseUpdTable()">
+        <button (click)="updCourse()">
           Обновить курс
         </button>
 
-        <button>
+        <button (click)="deleteCourse()">
           Удалить курс
         </button>
       </div>
@@ -63,111 +63,5 @@
   </div>
 </div>
 
-
-<div class="studAdd_div d-flex justify-content-center" *ngIf="showAddStudent === true">
-  <div class="frm-div row">
-    <div class="frm_header">
-      Добавить ученика
-    </div>
-
-    <input type="text" placeholder="Имя/Ник" [(ngModel)]="name">
-    <input type="text" placeholder="Эл.почта" [(ngModel)]="username">
-    <input type="text" placeholder="Пароль"  [(ngModel)]="password">
-    <p>
-      Курс(ы)
-    </p>
-
-    <form>
-      <label *ngFor="let course of courses" style="margin-right: 20px">
-        <input type="checkbox" [value]="course" (change)="updateSelectedCourses(course.id)"
-               style="height: 16px; width: 16px;">
-        {{course.name}} ({{course.level}})
-      </label>
-    </form>
-
-    <div class="form_actions col d-flex justify-content-center">
-      <button (click)="registerStudent()">
-        Добавить
-      </button>
-      <button (click)="cancel()">
-        Отмена
-      </button>
-    </div>
-  </div>
-</div>
-
-
-<div class="courseAdd_div d-flex justify-content-center" *ngIf="showAddCourse === true">
-  <div class="frm-div row">
-    <div class="frm_header">
-      Добавить курс
-    </div>
-
-    <input type="text" placeholder="Название" [(ngModel)]="name">
-    <textarea placeholder="Описание" [(ngModel)]="description"></textarea>
-    <input type="text" placeholder="Уровень"  [(ngModel)]="level">
-
-    <div class="form_actions d-flex justify-content-center">
-      <button (click)="addCourse()">
-        Добавить
-      </button>
-      <button (click)="cancel()">
-        Отмена
-      </button>
-    </div>
-  </div>
-</div>
-
-<div class="teacherAdd_div d-flex justify-content-center" *ngIf="showAddTeacher === true">
-  <div class="frm-div row">
-    <div class="frm_header">
-      Добавить учителя
-    </div>
-
-    <input type="text" placeholder="Имя/Ник" [(ngModel)]="name">
-    <input type="email" placeholder="Эл.почта" [(ngModel)]="username">
-    <input type="text" placeholder="Пароль"  [(ngModel)]="password">
-    <p>
-      Курс(ы)
-    </p>
-
-    <form>
-      <label *ngFor="let course of courses" style="margin-right: 20px">
-        <input type="checkbox" [value]="course" (change)="updateSelectedCourses(course.id)"
-               style="height: 16px; width: 16px;">
-        {{course.name}} ({{course.level}})
-      </label>
-    </form>
-
-    <div class="form_actions col d-flex justify-content-center">
-      <button (click)="registerTeacher()">
-        Добавить
-      </button>
-      <button (click)="cancel()">
-        Отмена
-      </button>
-    </div>
-  </div>
-</div>
-
-<div class="courseUpd_div row d-flex justify-content-center" *ngIf="showUpdateCourse === true">
-  <div class="frm-div row ">
-    <div class="frm_header">
-      Выберите курс
-    </div>
-    <div class="allCourses d-flex justify-content-center"  *ngFor="let course of courses">
-      <div class="courses_name" (click)="updCourse()">
-        {{course.name}} ({{course.level}})
-      </div>
-    </div>
-
-      <div class="form_actions col d-flex justify-content-center">
-        <button (click)="cancel()">
-          Отмена
-        </button>
-      </div>
-  </div>
-
-</div>
 
 

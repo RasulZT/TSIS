@@ -8,6 +8,7 @@ import {SharedModule} from "./shared/shared.module";
 import {HomeModule} from "./home/home.module";
 import {UserpageModule} from "./UserInterface/userpage/userpage.module";
 import {HttpClientModule} from "@angular/common/http";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {HttpClientModule} from "@angular/common/http";
     SharedModule,
     HomeModule,
     UserpageModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

@@ -1,0 +1,27 @@
+<div class="studAdd_div d-flex justify-content-center" >
+  <div class="frm-div row" *ngIf="!upd">
+    <div class="frm_header">
+      Доступные курсы
+    </div>
+
+    <div class="availableCourses">
+      <div class="courses" *ngFor="let course of courses">
+        <input class="choice_course" type="checkbox" [value]="course" (change)="selectedID(course.id)"
+               style="height: 16px; width: 16px;">
+        {{course.name}} ({{course.level}})
+      </div>
+
+    </div>
+
+    <div class="form_actions col d-flex justify-content-center">
+      <button (click)="deleteCourses()">
+        Удалить
+      </button>
+      <button (click)="goBack()">
+        Отмена
+      </button>
+    </div>
+  </div>
+
+
+</div>

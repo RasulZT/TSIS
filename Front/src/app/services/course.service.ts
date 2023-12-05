@@ -29,8 +29,25 @@ export class CourseService {
   postCourse(data: any){
     this.http.post('http://127.0.0.1:8000/' + 'user/courses/', data).subscribe((response: any) => {},
         error => {
-      alert("Произошла ошибка при регистрации попробуйте заново");
+      alert("Произошла ошибка. Попробуйте заново");
       console.log(error)
     })
   }
+
+  putCourse(id: number, data: any){
+    this.http.put('http://127.0.0.1:8000/' + `user/courses/${id}/`, data).subscribe((response: any) => {},
+      error => {
+        alert("Произошла ошибка. Попробуйте заново");
+        console.log(error)
+      })
+  }
+
+  deleteCourse(id: number){
+    this.http.delete('http://127.0.0.1:8000/' + `user/courses/${id}/`).subscribe((response: any) => {},
+      error => {
+        alert("Произошла ошибка. Попробуйте заново");
+        console.log(error)
+      })
+  }
+
 }

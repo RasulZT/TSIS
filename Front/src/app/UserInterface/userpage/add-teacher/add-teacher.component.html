@@ -1,0 +1,43 @@
+<div class="teacherAdd_div d-flex justify-content-center">
+  <div class="frm-div row">
+    <div class="frm_header">
+      Добавить учителя
+    </div>
+
+    <form [formGroup]="addTeacherForm">
+      <input type="text" placeholder="Имя/Ник" formControlName="name">
+      <span *ngIf="name && name.invalid && name.touched" class="invalid" style="color: #DB0916; font-size: 15px; margin-left: 5px">
+        *Обязательное поле
+      </span>
+      <input type="email" placeholder="Эл.почта" formControlName="username">
+      <span *ngIf="username && username.invalid && username.touched" class="invalid" style="color: #DB0916; font-size: 15px; margin-left: 5px">
+        *Обязательное поле
+      </span>
+      <input type="text" placeholder="Пароль"  formControlName="password">
+      <span *ngIf="password && password.invalid && password.touched" class="invalid" style="color: #DB0916; font-size: 15px; margin-left: 5px">
+        *Обязательное поле
+      </span>
+    </form>
+
+    <p style="margin-top: 15px">
+      Курс(ы):
+    </p>
+
+    <form>
+      <label *ngFor="let course of courses" style="margin-right: 20px">
+        <input type="checkbox" [value]="course" (change)="updateSelectedCourses(course.id)"
+               style="height: 16px; width: 16px;">
+        {{course.name}} ({{course.level}})
+      </label>
+    </form>
+
+    <div class="form_actions col d-flex justify-content-center">
+      <button type= "submit" (click)="registerTeacher()">
+        Добавить
+      </button>
+      <button (click)="goBack()">
+        Отмена
+      </button>
+    </div>
+  </div>
+</div>

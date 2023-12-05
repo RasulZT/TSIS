@@ -1,0 +1,51 @@
+<div class="studAdd_div d-flex justify-content-center" >
+  <div class="frm-div row" *ngIf="!upd">
+    <div class="frm_header">
+      Доступные курсы
+    </div>
+
+    <div class="availableCourses">
+      <div class="courses" *ngFor="let course of courses">
+        <p class = "choice_course" (click)="courseUpdate(course)"> {{course.name}} {{course.level}}</p>
+      </div>
+
+    </div>
+
+    <div class="form_actions col d-flex justify-content-center">
+      <button (click)="goBack()">
+        Отмена
+      </button>
+    </div>
+  </div>
+
+  <div class="frm-div row" *ngIf="upd">
+    <div class="frm_header">
+      Обновить курс
+    </div>
+
+    <form class="UpdatedCourse" [formGroup]="updCoursesForm">
+      <input type="text" placeholder="Название" formControlName="name">
+      <span *ngIf="courseName && courseName.invalid && courseName.touched" class="invalid" style="color: #DB0916; font-size: 15px; margin-left: 5px">
+        *Обязательное поле
+      </span>
+      <textarea placeholder="Описание" formControlName="description"></textarea>
+      <span *ngIf="description && description.invalid && description.touched" class="invalid" style="color: #DB0916; font-size: 15px; margin-left: 5px">
+        *Обязательное поле
+      </span>
+      <input type="text" placeholder="Уровень" formControlName= "level">
+      <span *ngIf="level && level.invalid && level.touched" class="invalid" style="color: #DB0916; font-size: 15px; margin-left: 5px">
+        *Обязательное поле
+      </span>
+    </form>
+
+    <div class="form_actions col d-flex justify-content-center">
+      <button [disabled]="updCoursesForm.invalid" (click)="saveChanges()">
+        Сохранить
+      </button>
+      <button type="button" (click)="cancel()">
+        Отмена
+      </button>
+    </div>
+  </div>
+
+</div>
