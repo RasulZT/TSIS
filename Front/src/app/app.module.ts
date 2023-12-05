@@ -10,10 +10,12 @@ import {UserpageModule} from "./UserInterface/userpage/userpage.module";
 import {HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { OfflineComponent } from './offline/offline.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OfflineComponent
   ],
   imports: [
     BrowserModule,

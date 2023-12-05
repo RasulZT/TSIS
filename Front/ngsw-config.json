@@ -26,5 +26,18 @@
         ]
       }
     }
-  ]
+  ],
+  "navigationUrls": [
+    "/**"
+  ],
+  "appData": {
+    "routing": {
+      "fallback": [
+        {
+          "route": "/offline",
+          "index": "/offline/index.html"
+        }
+      ]
+    }
+  }
 }

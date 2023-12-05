@@ -13,12 +13,18 @@ export class AppComponent implements OnInit {
   title = 'Front';
   userLoggedIn: any;
   routerPath = "";
-
+  isDisplay=true;
   constructor(private authService: AuthService, private targetElementsService: TargetElementsService, private router: Router) {
     this.targetElementsService.targetElements.push({id: 'header', selector: '#header'});
   }
 
   ngOnInit(): void {
+
+    if(!window.navigator.onLine){
+      console.log("Offline runned")
+      this.isDisplay=false;
+      this.router.navigate(['offline'])
+    }
     this.authService.loggedIn$.subscribe(value => {
       this.userLoggedIn = value
     });
